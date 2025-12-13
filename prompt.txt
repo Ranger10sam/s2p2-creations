@@ -1,0 +1,340 @@
+You are a world-class creative frontend engineer and product designer who builds award-level interactive websites (Awwwards / CSS Design Awards quality).
+You deeply understand freelance client conversion psychology, modern motion-driven UI, and high-performance frontend engineering.
+
+Your task is to design and build a premium, interactive, minimal, conversion-focused website named S2P2 Creations.
+
+Core Objective
+
+This website is NOT a job portfolio.
+
+It is a client-acquisition product designed to:
+
+Attract freelance clients
+
+Showcase real, live SaaS products
+
+Showcase real client work
+
+Demonstrate how interactive, polished, and high-quality our services are
+
+Visitors should instantly think:
+
+“If this is their website, they can definitely build something incredible for me.”
+
+Tech Stack (MANDATORY)
+
+Framework: Next.js (App Router)
+
+Styling: Tailwind CSS
+
+Animations: Framer Motion (core dependency)
+
+UI: Custom components only (no generic UI kits)
+
+Performance: Optimized animations, Lighthouse-friendly
+
+Responsive: Mobile-first, flawless desktop experience
+
+SEO: Proper metadata, structured routing
+
+Design Philosophy
+
+Minimal but bold
+
+Premium tech / modern SaaS aesthetic
+
+Bento grids
+
+Large typography
+
+High whitespace
+
+Subtle gradients and glassmorphism (used sparingly)
+
+Dark base with vibrant accent colors (blue/cyan/violet direction)
+
+Modern sans-serif typography with optional mono for tech elements
+
+Interactivity Rules (CRITICAL)
+
+This is not just animated backgrounds.
+
+The entire website must feel alive:
+
+Hover-reactive components
+
+Magnetic buttons
+
+Animated cards
+
+Scroll-based reveals
+
+Subtle parallax effects
+
+Smooth page transitions
+
+Micro-interactions everywhere
+
+Components react to user intent
+
+Every animation must feel intentional and premium, never gimmicky.
+
+Website Structure & Content
+1️⃣ Home / Landing Page
+Hero Section
+
+Strong headline (e.g. “We build interactive digital products that convert.”)
+
+Supporting line: SaaS • Mobile Apps • Shopify • High-Performance Web
+
+Two CTAs:
+
+“View Our Work”
+
+“Start a Project”
+
+Interactions
+
+Animated typography on load
+
+Magnetic CTA buttons
+
+Subtle background movement reacting to cursor
+
+Bento Grid – What We Do
+
+Interactive bento grid featuring:
+
+SaaS Development
+
+Mobile App Development
+
+Shopify Development
+
+Web Experiences
+
+UI/UX Engineering
+
+Each card:
+
+Expands or reacts on hover
+
+Has micro-animations and depth
+
+Feels tactile and responsive
+
+Featured Work (Primary Focus)
+
+Highlight real live products first:
+
+Formabit
+https://www.formabit.in
+
+ChefBit
+https://play.google.com/store/apps/details?id=com.chefbit.in
+
+Each project card should:
+
+Animate on hover
+
+Show interactive tech stack chips
+
+Include “View Case Study” CTA
+
+Why S2P2 Creations
+
+Avoid boring bullet points.
+
+Use:
+
+Interactive layouts
+
+Animated comparisons
+
+Philosophy-driven content
+
+Examples:
+
+Performance-first engineering
+
+Design that converts, not just looks good
+
+Built for real users, real businesses
+
+Conversion CTA
+
+Bold
+
+Emotional
+
+Minimal
+
+Highly animated CTA button
+
+2️⃣ Work Page (Projects Listing)
+
+Grid-based interactive project gallery with filters:
+
+SaaS
+
+Mobile Apps
+
+Shopify
+
+Web
+
+Projects to include:
+
+Products / SaaS
+
+Formabit
+
+ChefBit
+
+Client Work
+
+Deployed Store — https://www.deployed.store
+
+Declutter — https://declutter.shop
+
+Each card links to a dedicated project page.
+
+3️⃣ Individual Project Pages (VERY IMPORTANT)
+
+Each project must have a dedicated, detailed page.
+
+Page Structure
+
+Hero
+
+Project name
+
+One-line outcome-focused description
+
+Live link
+
+Animated hero visuals
+
+Overview
+
+Problem it solves
+
+Why it was built
+
+Target users
+
+Tech Stack
+
+Displayed as interactive chips/cards
+Examples:
+
+Next.js
+
+Spring Boot
+
+PostgreSQL
+
+React Native
+
+Shopify
+
+Tailwind
+
+Docker
+
+What We Did
+
+Architecture decisions
+
+UI/UX strategy
+
+Performance optimizations
+
+Custom features
+
+Visual Showcase
+
+Animated mockups
+
+Scroll-based transitions
+
+Results / Impact
+
+Business value
+
+Outcomes or metrics (if available)
+
+CTA
+
+“Build something like this”
+
+4️⃣ Services Page
+
+Each service should feel like a product offering, not a paragraph.
+
+Services:
+
+SaaS Development
+
+Mobile App Development
+
+Shopify Development
+
+Custom Web Experiences
+
+UI/UX Engineering
+
+Each section should include:
+
+Interactive layouts
+
+Animated process flows
+
+What the client gets
+
+Why S2P2 Creations is different
+
+5️⃣ About / Philosophy Page
+
+Focus on:
+
+Craftsmanship
+
+Engineering mindset
+
+Quality over quantity
+
+Long-term partnerships
+
+Minimal personal info, maximum belief and intent.
+
+6️⃣ Contact / Start a Project Page
+
+Animated, minimal form
+
+Smooth input interactions
+
+Clear CTA
+
+Success animation after submission
+
+Quality & Optimization Requirements
+
+No unnecessary sections
+
+No clutter
+
+No generic templates
+
+Animations must never feel heavy
+
+Smooth page transitions
+
+Clean, scalable code structure
+
+The site itself should prove the quality of the services
+
+Final Instruction
+
+Build this website as if it will be submitted to Awwwards and used to acquire high-value freelance clients.
+The website itself should be the strongest proof of expertise.
