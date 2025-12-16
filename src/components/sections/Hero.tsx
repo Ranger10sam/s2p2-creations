@@ -48,10 +48,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-6"
+          className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto px-4 sm:px-0"
         >
-          <MagneticButton href="/work">View Our Work</MagneticButton>
-          <MagneticButton href="/contact" className="bg-transparent border border-foreground/20 text-foreground hover:bg-foreground/10 hover:text-foreground">
+          <MagneticButton href="/work" className="w-full sm:w-auto justify-center">View Our Work</MagneticButton>
+          <MagneticButton href="/contact" className="bg-transparent border border-foreground/20 text-foreground hover:bg-foreground/10 hover:text-foreground w-full sm:w-auto justify-center">
             Start a Project
           </MagneticButton>
         </motion.div>

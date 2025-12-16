@@ -23,7 +23,7 @@ const homeSections: Section[] = [
 ];
 
 const projectSections: Section[] = [
-  { id: "home", label: "Back to Home", number: "←", path: "/" },
+  { id: "back", label: "Go Back", number: "←" },
   { id: "hero", label: "Intro", number: "01" },
   { id: "overview", label: "Overview", number: "02" },
   { id: "features", label: "Features", number: "03" },
@@ -31,23 +31,24 @@ const projectSections: Section[] = [
 ];
 
 const serviceSections: Section[] = [
-  { id: "home", label: "Back to Home", number: "←", path: "/" },
+  { id: "back", label: "Go Back", number: "←" },
   { id: "hero", label: "Expertise", number: "01" },
   { id: "list", label: "Services", number: "02" },
   { id: "process", label: "Process", number: "03" },
 ];
 
 const workSections: Section[] = [
-  { id: "home", label: "Back to Home", number: "←", path: "/" },
+  { id: "back", label: "Go Back", number: "←" },
   { id: "hero", label: "Intro", number: "01" },
   { id: "projects", label: "Projects", number: "02" },
 ];
 
 const aboutSections: Section[] = [
-  { id: "home", label: "Back to Home", number: "←", path: "/" },
+  { id: "back", label: "Go Back", number: "←" },
   { id: "hero", label: "Intro", number: "01" },
   { id: "values", label: "Values", number: "02" },
-  { id: "manifesto", label: "Manifesto", number: "03" },
+  { id: "experience", label: "Experience", number: "03" },
+  { id: "connect", label: "Connect", number: "04" },
 ];
 
 const defaultSections: Section[] = [
@@ -80,7 +81,7 @@ export default function SidebarNav() {
   // Derived active section state
   const activeSection = isDefaultNav
     ? (currentSections.find(s => s.path === pathname)?.id || currentSections[0].id)
-    : (scrollActiveSection || currentSections[0].id);
+    : (scrollActiveSection || (currentSections[0].id === "back" ? currentSections[1].id : currentSections[0].id));
 
   useLayoutEffect(() => {
     if (!isDefaultNav) {
@@ -115,6 +116,11 @@ export default function SidebarNav() {
   }, [isCollapsed]);
 
   const handleNavClick = (section: Section) => {
+    if (section.id === "back") {
+      router.back();
+      return;
+    }
+    
     if (section.path) {
       router.push(section.path);
     } else {

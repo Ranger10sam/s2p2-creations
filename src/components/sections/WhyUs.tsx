@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Card from "@/components/ui/Card";
 import InteractiveBackground from "@/components/ui/InteractiveBackground";
+import MagneticButton from "@/components/ui/MagneticButton";
+import { ArrowRight } from "lucide-react";
 
 const reasons = [
   {
@@ -23,19 +25,36 @@ export default function WhyUs() {
   return (
     <section className="py-32 px-4 w-full max-w-7xl mx-auto relative">
       <InteractiveBackground className="opacity-30" />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start relative z-10">
+        {/* Left Column: Who We Are */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-            Why S2P2 Creations?
-          </h2>
-          <p className="text-xl text-foreground/60 mb-12 font-light">
-            We bridge the gap between creative design and engineering excellence.
+          <h2 className="text-sm font-mono text-primary mb-6 tracking-widest uppercase">Who We Are</h2>
+          <h3 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+            Bridging the gap between <span className="text-primary">Design</span> and <span className="text-primary">Engineering</span>.
+          </h3>
+          <p className="text-xl text-foreground/70 font-light leading-relaxed mb-8">
+            S2P2 Creations is a premium digital product studio led by a solo creative engineer. 
+            We do not just build websites; we craft immersive digital experiences that tell stories and drive results.
           </p>
+          <MagneticButton href="/about" className="group flex items-center gap-2">
+            Read Our Story
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </MagneticButton>
+        </motion.div>
+
+        {/* Right Column: Why S2P2 */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h2 className="text-3xl font-bold mb-8">Why S2P2?</h2>
           <div className="space-y-8">
             {reasons.map((reason, index) => (
               <motion.div
@@ -46,38 +65,12 @@ export default function WhyUs() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="pl-8 border-l-2 border-primary/30 hover:border-primary transition-colors duration-300"
               >
-                <h3 className="text-2xl font-bold mb-2">{reason.title}</h3>
-                <p className="text-lg text-foreground/70 font-light">{reason.description}</p>
+                <h3 className="text-xl font-bold mb-2">{reason.title}</h3>
+                <p className="text-base text-foreground/70 font-light">{reason.description}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
-
-        <div className="grid gap-6">
-          <Card className="bg-gradient-to-br from-zinc-900 to-black border-zinc-800">
-            <div className="h-48 flex items-center justify-center">
-               {/* Abstract visual representation */}
-               <div className="relative w-32 h-32">
-                 <motion.div 
-                   animate={{ rotate: 360 }}
-                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                   className="absolute inset-0 rounded-full border-2 border-dashed border-primary/50"
-                 />
-                 <motion.div 
-                   animate={{ rotate: -360 }}
-                   transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                   className="absolute inset-4 rounded-full border-2 border-dashed border-secondary/50"
-                 />
-                 <div className="absolute inset-0 flex items-center justify-center font-bold text-2xl">
-                   100%
-                 </div>
-               </div>
-            </div>
-            <div className="text-center mt-4">
-              <p className="font-mono text-sm text-primary">Lighthouse Score</p>
-            </div>
-          </Card>
-        </div>
       </div>
     </section>
   );

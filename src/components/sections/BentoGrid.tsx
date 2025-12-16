@@ -6,6 +6,8 @@ import InteractiveBackground from "@/components/ui/InteractiveBackground";
 import { cn } from "@/lib/utils";
 import { SaasIcon, MobileIcon, ShopifyIcon, WebIcon, UiIcon } from "@/components/ui/ServiceIcons";
 import TiltCard from "@/components/ui/TiltCard";
+import MagneticButton from "@/components/ui/MagneticButton";
+import { ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -96,6 +98,13 @@ export default function BentoGrid() {
             </TiltCard>
           </motion.div>
         ))}
+      </div>
+
+      <div className="mt-16 flex justify-center">
+        <MagneticButton href="/services" className="group flex items-center gap-2 px-8 py-4">
+          View All Services
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </MagneticButton>
       </div>
     </section>
   );

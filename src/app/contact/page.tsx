@@ -92,11 +92,11 @@ export default function ContactPage() {
             <div>
               <h3 className="text-2xl font-bold mb-6">Contact Info</h3>
               <div className="space-y-6">
-                <a href="mailto:hello@s2p2.com" className="flex items-center gap-4 text-foreground/60 hover:text-primary transition-colors group">
+                <a href="mailto:sampritchaudhury@gmail.com" className="flex items-center gap-4 text-foreground/60 hover:text-primary transition-colors group">
                   <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary/20 transition-colors">
                     <Mail className="w-6 h-6" />
                   </div>
-                  <span className="text-lg">hello@s2p2.com</span>
+                  <span className="text-lg">sampritchaudhury@gmail.com</span>
                 </a>
                 <div className="flex items-center gap-4 text-foreground/60">
                   <div className="p-3 rounded-full bg-white/5">
@@ -108,12 +108,12 @@ export default function ContactPage() {
             </div>
 
             <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 border border-white/10">
-              <h3 className="text-xl font-bold mb-4">Join the Team</h3>
+              <h3 className="text-xl font-bold mb-4">Collaboration</h3>
               <p className="text-foreground/70 mb-6 leading-relaxed">
-                We are always looking for talented designers and engineers. Send your portfolio to careers@s2p2.com
+                Open to collaborations and partnerships. Let's build something great together.
               </p>
               <Link href="/about" className="text-primary hover:underline">
-                Read our Manifesto →
+                Read my Story →
               </Link>
             </div>
           </motion.div>
