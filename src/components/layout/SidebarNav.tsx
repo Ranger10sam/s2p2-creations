@@ -85,26 +85,40 @@ export default function SidebarNav() {
 
   useLayoutEffect(() => {
     if (!isDefaultNav) {
+      let ticking = false;
       const handleScroll = () => {
-        const sectionElements = currentSections.map((section) => ({
-          id: section.id,
-          element: document.getElementById(section.id),
-        }));
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const sectionElements = currentSections.map((section) => ({
+              id: section.id,
+              element: document.getElementById(section.id),
+            }));
 
-        // Reverse iterate to find the topmost stacked section
-        for (let i = sectionElements.length - 1; i >= 0; i--) {
-          const section = sectionElements[i];
-          if (!section.element) continue;
-          
-          const rect = section.element.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2) {
-            setScrollActiveSection(section.id);
-            break;
-          }
+            // Reverse iterate to find the topmost stacked section
+            for (let i = sectionElements.length - 1; i >= 0; i--) {
+              const section = sectionElements[i];
+              if (!section.element) continue;
+              
+              const rect = section.element.getBoundingClientRect();
+              // Adjust threshold for better accuracy
+              if (rect.top <= window.innerHeight / 2) {
+                // Only update if changed to avoid unnecessary renders (though React handles this, good to be explicit)
+                setScrollActiveSection((prev) => {
+                  if (prev !== section.id) {
+                    return section.id;
+                  }
+                  return prev;
+                });
+                break;
+              }
+            }
+            ticking = false;
+          });
+          ticking = true;
         }
       };
 
-      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll, { passive: true });
       handleScroll(); // Trigger once to set initial state
       return () => window.removeEventListener("scroll", handleScroll);
     }
@@ -124,6 +138,12 @@ export default function SidebarNav() {
     if (section.path) {
       router.push(section.path);
     } else {
+      // Special case for Hero/Intro to ensure we go to the absolute top
+      if (section.id === "hero") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
       const element = document.getElementById(section.id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });

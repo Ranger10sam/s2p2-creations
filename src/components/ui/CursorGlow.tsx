@@ -12,12 +12,19 @@ export default function CursorGlow() {
   const y = useSpring(mouseY, springConfig);
 
   useEffect(() => {
+    let ticking = false;
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX - 150); // Center the 300px glow
-      mouseY.set(e.clientY - 150);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          mouseX.set(e.clientX - 150); // Center the 300px glow
+          mouseY.set(e.clientY - 150);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 

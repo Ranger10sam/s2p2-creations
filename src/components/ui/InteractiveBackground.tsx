@@ -22,17 +22,25 @@ function InteractiveBackground({ className }: InteractiveBackgroundProps) {
   const springY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
+    let ticking = false;
     const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      // Calculate relative to window center for a subtle parallax feel
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      
-      mouseX.set((clientX - centerX) * 0.1);
-      mouseY.set((clientY - centerY) * 0.1);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // console.log("[InteractiveBackground] Mouse move processed");
+          const { clientX, clientY } = e;
+          // Calculate relative to window center for a subtle parallax feel
+          const centerX = window.innerWidth / 2;
+          const centerY = window.innerHeight / 2;
+          
+          mouseX.set((clientX - centerX) * 0.1);
+          mouseY.set((clientY - centerY) * 0.1);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 

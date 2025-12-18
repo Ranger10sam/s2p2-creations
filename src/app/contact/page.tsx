@@ -20,10 +20,10 @@ export default function ContactPage() {
           className="mb-20"
         >
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8">
-            Let's Talk.
+            Lets Talk.
           </h1>
           <p className="text-xl text-foreground/60 max-w-2xl font-light">
-            Have a project in mind? We'd love to hear about it.
+            Have a project in mind? We would love to hear about it.
           </p>
         </motion.div>
 
@@ -102,15 +102,15 @@ export default function ContactPage() {
                   <div className="p-3 rounded-full bg-white/5">
                     <MapPin className="w-6 h-6" />
                   </div>
-                  <span className="text-lg">Bangalore, India</span>
+                  <span className="text-lg">India</span>
                 </div>
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-purple-500/20 border border-white/10">
+            <div className="p-8 rounded-2xl bg-linear-to-br from-primary/20 to-purple-500/20 border border-white/10">
               <h3 className="text-xl font-bold mb-4">Collaboration</h3>
               <p className="text-foreground/70 mb-6 leading-relaxed">
-                Open to collaborations and partnerships. Let's build something great together.
+                Open to collaborations and partnerships. Lets build something great together.
               </p>
               <Link href="/about" className="text-primary hover:underline">
                 Read my Story →
