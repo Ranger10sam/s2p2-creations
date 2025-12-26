@@ -62,18 +62,18 @@ export default function WorkPage() {
                       {project.description}
                     </p>
 
-                    <div className="flex gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
                       <MagneticButton href={`/work/${project.slug}`} className="px-8 py-4">
                         View Case Study
                       </MagneticButton>
-                      <a 
+                      <MagneticButton 
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-8 py-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors flex items-center gap-2"
+                        className="px-8 py-4 bg-transparent border border-white/10 hover:bg-white/5 text-foreground"
                       >
-                        Live Site <span className="text-xs">↗</span>
-                      </a>
+                        Live Site <span className="text-xs ml-2">↗</span>
+                      </MagneticButton>
                     </div>
                   </div>
 

@@ -89,19 +89,18 @@ export default function FeaturedWork() {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-auto pt-8 border-t border-white/5">
-                <MagneticButton href={`/work/${project.slug}`} className="px-6 py-3 text-sm w-full sm:w-auto text-center">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-auto pt-8 border-t border-white/5">
+                <MagneticButton href={`/work/${project.slug}`} className="px-6 py-3 text-sm">
                   View Case Study
                 </MagneticButton>
-                <a 
+                <MagneticButton 
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="px-6 py-3 text-sm font-medium rounded-full border border-white/20 text-foreground/80 hover:bg-white/10 hover:text-foreground transition-colors flex items-center justify-center gap-2 w-full sm:w-auto"
+                  className="px-6 py-3 text-sm bg-transparent border border-white/20 text-foreground/80 hover:bg-white/10 hover:text-foreground"
                 >
-                  Live Site 
-                  <span>↗</span>
-                </a>
+                  Live Site ↗
+                </MagneticButton>
               </div>
 
               <div 

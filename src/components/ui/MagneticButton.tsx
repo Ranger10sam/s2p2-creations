@@ -12,9 +12,20 @@ interface MagneticButtonProps {
   href?: string;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  target?: string;
+  rel?: string;
 }
 
-export default function MagneticButton({ children, className, onClick, href, type = "button", disabled = false }: MagneticButtonProps) {
+export default function MagneticButton({ 
+  children, 
+  className, 
+  onClick, 
+  href, 
+  type = "button", 
+  disabled = false,
+  target,
+  rel
+}: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -38,7 +49,7 @@ export default function MagneticButton({ children, className, onClick, href, typ
       onClick={onClick}
       disabled={disabled}
       className={cn(
-        "px-8 py-4 rounded-full bg-foreground text-background font-medium text-lg transition-colors hover:bg-primary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed",
+        "px-8 py-4 rounded-full bg-foreground text-background font-medium text-lg transition-colors hover:bg-primary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed w-full flex items-center justify-center",
         className
       )}
     >
@@ -46,16 +57,31 @@ export default function MagneticButton({ children, className, onClick, href, typ
     </button>
   );
 
+  const Wrapper = href ? (
+    target ? (
+      <a href={href} target={target} rel={rel} className="w-full block">
+        {content}
+      </a>
+    ) : (
+      <Link href={href} className="w-full block">
+        {content}
+      </Link>
+    )
+  ) : (
+    content
+  );
+
   return (
     <motion.div
-      style={{ position: "relative", display: "inline-block" }}
+      style={{ position: "relative" }}
+      className="inline-block w-full sm:w-auto"
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x, y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
     >
-      {href ? <Link href={href}>{content}</Link> : content}
+      {Wrapper}
     </motion.div>
   );
 }
