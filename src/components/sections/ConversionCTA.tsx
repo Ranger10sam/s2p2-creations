@@ -23,7 +23,7 @@ export default function ConversionCTA() {
         </p>
         
         <div className="flex justify-center">
-          <MagneticButton className="px-10 py-5 text-xl bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25">
+          <MagneticButton href="/contact" className="px-10 py-5 text-xl bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/25">
             Start Your Project
           </MagneticButton>
         </div>

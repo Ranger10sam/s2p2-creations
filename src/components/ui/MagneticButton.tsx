@@ -10,9 +10,11 @@ interface MagneticButtonProps {
   className?: string;
   onClick?: () => void;
   href?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
-export default function MagneticButton({ children, className, onClick, href }: MagneticButtonProps) {
+export default function MagneticButton({ children, className, onClick, href, type = "button", disabled = false }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -32,9 +34,11 @@ export default function MagneticButton({ children, className, onClick, href }: M
 
   const content = (
     <button
+      type={type}
       onClick={onClick}
+      disabled={disabled}
       className={cn(
-        "px-8 py-4 rounded-full bg-foreground text-background font-medium text-lg transition-colors hover:bg-primary hover:text-white",
+        "px-8 py-4 rounded-full bg-foreground text-background font-medium text-lg transition-colors hover:bg-primary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed",
         className
       )}
     >
