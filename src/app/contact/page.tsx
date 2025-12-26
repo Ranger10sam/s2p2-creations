@@ -26,9 +26,10 @@ export default function ContactPage() {
     
     try {
       // Google Sheets backend - stores data & sends email notification
-      const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
+      const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
       
       if (!GOOGLE_SCRIPT_URL) {
+        console.error("NEXT_PUBLIC_GOOGLE_SCRIPT_URL is not set");
         throw new Error("Script URL not configured");
       }
       
