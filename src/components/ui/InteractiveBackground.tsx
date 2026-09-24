@@ -15,11 +15,9 @@ function InteractiveBackground({ className }: InteractiveBackgroundProps) {
   });
 
   const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
 
   const springConfig = { damping: 25, stiffness: 150 };
   const springX = useSpring(mouseX, springConfig);
-  const springY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
     let ticking = false;
@@ -27,13 +25,11 @@ function InteractiveBackground({ className }: InteractiveBackgroundProps) {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           // console.log("[InteractiveBackground] Mouse move processed");
-          const { clientX, clientY } = e;
+          const { clientX } = e;
           // Calculate relative to window center for a subtle parallax feel
           const centerX = window.innerWidth / 2;
-          const centerY = window.innerHeight / 2;
-          
+
           mouseX.set((clientX - centerX) * 0.1);
-          mouseY.set((clientY - centerY) * 0.1);
           ticking = false;
         });
         ticking = true;
@@ -42,7 +38,7 @@ function InteractiveBackground({ className }: InteractiveBackgroundProps) {
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  }, [mouseX]);
 
   const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);

@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import CursorGlow from "@/components/ui/CursorGlow";
-import Link from "next/link";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 const services = [
@@ -125,7 +124,7 @@ export default function ServicesPage() {
         <div className="text-center py-20 border-t border-white/10">
           <h2 className="text-4xl font-bold mb-8">Have a project in mind?</h2>
           <MagneticButton href="/contact" className="px-10 py-4 text-lg">
-            Let's Talk
+            Let&apos;s Talk
           </MagneticButton>
         </div>
       </div>

@@ -16,10 +16,27 @@ interface Section {
 
 const homeSections: Section[] = [
   { id: "hero", label: "Intro", number: "01" },
-  { id: "services", label: "Services", number: "02" },
-  { id: "work", label: "Selected Work", number: "03" },
-  { id: "philosophy", label: "Philosophy", number: "04" },
-  { id: "contact", label: "Contact", number: "05" },
+  { id: "showroom", label: "Showroom", number: "02", path: "/showroom" },
+  { id: "services", label: "Services", number: "03" },
+  { id: "work", label: "Selected Work", number: "04" },
+  { id: "philosophy", label: "Philosophy", number: "05" },
+  { id: "contact", label: "Contact", number: "06" },
+];
+
+const showroomSections: Section[] = [
+  { id: "back", label: "Go Back", number: "←" },
+  { id: "hero", label: "Showroom", number: "01" },
+  { id: "catalogue", label: "Designs", number: "02" },
+  { id: "process", label: "How It Works", number: "03" },
+];
+
+const showroomProductSections: Section[] = [
+  { id: "back", label: "Showroom", number: "←", path: "/showroom" },
+  { id: "hero", label: "Design", number: "01" },
+  { id: "overview", label: "Overview", number: "02" },
+  { id: "included", label: "Included", number: "03" },
+  { id: "pricing", label: "Pricing", number: "04" },
+  { id: "customize", label: "Customize", number: "05" },
 ];
 
 const projectSections: Section[] = [
@@ -53,10 +70,11 @@ const aboutSections: Section[] = [
 
 const defaultSections: Section[] = [
   { id: "home", label: "Home", number: "01", path: "/" },
-  { id: "services", label: "Services", number: "02", path: "/services" },
-  { id: "work", label: "Work", number: "03", path: "/work" },
-  { id: "about", label: "About", number: "04", path: "/about" },
-  { id: "contact", label: "Contact", number: "05", path: "/contact" },
+  { id: "showroom", label: "Showroom", number: "02", path: "/showroom" },
+  { id: "services", label: "Services", number: "03", path: "/services" },
+  { id: "work", label: "Work", number: "04", path: "/work" },
+  { id: "about", label: "About", number: "05", path: "/about" },
+  { id: "contact", label: "Contact", number: "06", path: "/contact" },
 ];
 
 export default function SidebarNav() {
@@ -68,6 +86,8 @@ export default function SidebarNav() {
   // Determine which sections to show based on current path
   const getSections = () => {
     if (pathname === "/") return homeSections;
+    if (pathname === "/showroom") return showroomSections;
+    if (pathname.startsWith("/showroom/")) return showroomProductSections;
     if (pathname === "/work") return workSections;
     if (pathname.startsWith("/work/")) return projectSections;
     if (pathname === "/services") return serviceSections;
@@ -130,14 +150,17 @@ export default function SidebarNav() {
   }, [isCollapsed]);
 
   const handleNavClick = (section: Section) => {
+    if (section.path) {
+      router.push(section.path);
+      return;
+    }
+
     if (section.id === "back") {
       router.back();
       return;
     }
-    
-    if (section.path) {
-      router.push(section.path);
-    } else {
+
+    {
       // Special case for Hero/Intro to ensure we go to the absolute top
       if (section.id === "hero") {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -181,6 +204,7 @@ export default function SidebarNav() {
             </AnimatePresence>
             <button 
               onClick={() => setIsCollapsed(!isCollapsed)}
+              aria-label={isCollapsed ? "Expand navigation" : "Collapse navigation"}
               className={cn(
                 "p-2 hover:bg-white/5 rounded-full transition-colors text-white/60 hover:text-white",
                 isCollapsed && "mx-auto"

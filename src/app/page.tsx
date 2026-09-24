@@ -6,6 +6,7 @@ import CursorGlow from "@/components/ui/CursorGlow";
 const BentoGrid = dynamic(() => import("@/components/sections/BentoGrid"), {
   loading: () => <div className="h-screen w-full bg-background" />,
 });
+const FeaturedShowroom = dynamic(() => import("@/components/sections/FeaturedShowroom"));
 const FeaturedWork = dynamic(() => import("@/components/sections/FeaturedWork"));
 const WhyUs = dynamic(() => import("@/components/sections/WhyUs"));
 const ConversionCTA = dynamic(() => import("@/components/sections/ConversionCTA"));
@@ -18,23 +19,27 @@ export default function Home() {
       <StickySection id="hero" zIndex={0}>
         <Hero />
       </StickySection>
+
+      <StickySection id="showroom" zIndex={10} className="shadow-2xl shadow-black/50">
+        <FeaturedShowroom />
+      </StickySection>
       
-      <StickySection id="services" zIndex={10} className="shadow-2xl shadow-black/50">
+      <StickySection id="services" zIndex={20} className="shadow-2xl shadow-black/50">
         <BentoGrid />
       </StickySection>
       
-      <StickySection id="work" zIndex={20} className="shadow-2xl shadow-black/50">
+      <StickySection id="work" zIndex={30} className="shadow-2xl shadow-black/50">
         <FeaturedWork />
       </StickySection>
       
-      <StickySection id="philosophy" zIndex={30} className="shadow-2xl shadow-black/50">
+      <StickySection id="philosophy" zIndex={40} className="shadow-2xl shadow-black/50">
         <WhyUs />
       </StickySection>
       
       {/* Last section is relative to ensure it covers the previous sticky section and ends the page naturally */}
       <section 
         id="contact" 
-        className="w-full relative z-40 bg-background shadow-2xl shadow-black/50 min-h-screen flex flex-col justify-center"
+        className="w-full relative z-50 bg-background shadow-2xl shadow-black/50 min-h-screen flex flex-col justify-center"
       >
         <ConversionCTA />
       </section>

@@ -19,7 +19,7 @@ export default function ConversionCTA() {
           Ready to build something <span className="text-primary">extraordinary</span>?
         </h2>
         <p className="text-xl text-foreground/60 mb-12 max-w-2xl mx-auto">
-          Let's turn your vision into a high-performance digital reality.
+          Let&apos;s turn your vision into a high-performance digital reality.
         </p>
         
         <div className="flex justify-center">

@@ -24,12 +24,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.9]"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.9]"
         >
-          DIGITAL
+          WEBSITES READY
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
-            ALCHEMY
+            FOR YOUR BUSINESS
           </span>
         </motion.h1>
         
@@ -39,20 +39,19 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="text-xl md:text-2xl text-foreground/60 mb-12 max-w-2xl font-light"
         >
-          We transform ideas into high-performance digital experiences.
+          Browse ready-to-customize websites for cafés, gyms, salons, creatives, and growing local businesses.
           <br />
-          <span className="text-sm uppercase tracking-widest mt-4 block opacity-50">SaaS • Mobile • Shopify • Web</span>
+          <span className="text-sm uppercase tracking-widest mt-4 block opacity-50">Choose a design · Customize it · Launch</span>
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto px-4 sm:px-0"
+          className="w-full px-4 sm:w-auto sm:px-0"
         >
-          <MagneticButton href="/work" className="w-full sm:w-auto justify-center">View Our Work</MagneticButton>
-          <MagneticButton href="/contact" className="bg-transparent border border-foreground/20 text-foreground hover:bg-foreground/10 hover:text-foreground w-full sm:w-auto justify-center">
-            Start a Project
+          <MagneticButton href="/showroom" className="w-full justify-center px-10 sm:w-auto">
+            Enter the Showroom
           </MagneticButton>
         </motion.div>
       </motion.div>

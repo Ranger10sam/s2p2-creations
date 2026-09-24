@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +19,6 @@ const sections: Section[] = [
 
 export default function FloatingNav() {
   const [activeSection, setActiveSection] = useState("hero");
-  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap");
+:root {
+  --black: #0c0f0d;
+  --panel: #151a16;
+  --white: #f3f4ee;
+  --acid: #dcff3f;
+  --muted: #949c95;
+  --line: #303731;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: "DM Sans", sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+}
+header {
+  height: 82px;
+  padding: 0 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 20;
+}
+.logo {
+  font:
+    1.35rem "Archivo Black",
+    sans-serif;
+}
+.logo b {
+  color: var(--acid);
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+nav button {
+  border: 0;
+  background: var(--acid);
+  padding: 14px 19px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  margin: 5px;
+}
+.hero {
+  min-height: calc(100vh - 82px);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  padding: 7vh 4vw 0;
+  position: relative;
+}
+.hero-copy {
+  align-self: center;
+  padding-bottom: 120px;
+}
+.eyebrow {
+  font-size: 0.69rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--acid);
+  font-weight: 700;
+}
+h1,
+h2,
+h3 {
+  font-family: "Archivo Black", sans-serif;
+  margin: 0;
+}
+h1 {
+  font-size: clamp(4.7rem, 9.5vw, 10rem);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+}
+h1 span {
+  color: var(--acid);
+}
+.hero-copy > p:not(.eyebrow) {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.6;
+  margin: 30px 0;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.button {
+  padding: 17px 24px;
+  border: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+.acid {
+  background: var(--acid);
+  color: var(--black);
+}
+.hero-visual {
+  height: min(68vh, 650px);
+  align-self: center;
+  background: var(--panel);
+  position: relative;
+  overflow: hidden;
+}
+.hero-visual:after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent, rgba(12, 15, 13, 0.72));
+}
+.hero-visual img,
+.coach-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) contrast(1.08);
+}
+.bar {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 18px;
+  background: #687169;
+  top: 38%;
+  z-index: 3;
+}
+.plate {
+  position: absolute;
+  width: 85px;
+  height: 210px;
+  background: var(--acid);
+  top: calc(38% - 96px);
+  z-index: 4;
+}
+.plate.left {
+  left: 5%;
+}
+.plate.right {
+  right: 5%;
+}
+.athlete i {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: #c5ccc5;
+  border-radius: 50%;
+  left: calc(50% - 38px);
+  top: 22%;
+}
+.athlete span {
+  position: absolute;
+  width: 130px;
+  height: 260px;
+  background: #49514a;
+  left: calc(50% - 65px);
+  top: 32%;
+  clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+}
+.hero-visual p {
+  position: absolute;
+  bottom: 25px;
+  right: 28px;
+  text-align: right;
+  font: 0.85rem/1.5 "Archivo Black";
+  color: var(--acid);
+  z-index: 2;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.metrics div {
+  padding: 32px 4vw;
+  border-right: 1px solid var(--line);
+}
+.metrics strong {
+  font: 2.6rem "Archivo Black";
+  display: block;
+}
+.metrics span {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.training {
+  padding: 120px 4vw;
+}
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 65px;
+}
+.section-title h2,
+.coaches h2,
+.final h2 {
+  font-size: clamp(2.8rem, 5.7vw, 6rem);
+  line-height: 0.95;
+}
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.training-grid article {
+  background: var(--black);
+  padding: 40px;
+  min-height: 310px;
+}
+.training-grid span {
+  color: var(--acid);
+  font: 3rem "Archivo Black";
+}
+.training-grid h3 {
+  font-size: 1.7rem;
+  margin: 65px 0 15px;
+}
+.training-grid p,
+.coaches > div > p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+.coaches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: center;
+  padding: 100px 4vw;
+  background: var(--panel);
+}
+.coach-art {
+  height: 530px;
+  background: #283029;
+  position: relative;
+  overflow: hidden;
+}
+.coach-art img {
+  object-position: center top;
+}
+.coach-art:before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: var(--acid);
+  border-radius: 50%;
+  left: calc(50% - 120px);
+  top: 80px;
+}
+.coach-art i {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #aab1aa;
+  left: calc(50% - 45px);
+  top: 130px;
+  z-index: 2;
+}
+.coach-art span {
+  position: absolute;
+  width: 280px;
+  height: 330px;
+  background: #545d55;
+  left: calc(50% - 140px);
+  top: 210px;
+  clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+}
+blockquote {
+  font-size: 1.45rem;
+  line-height: 1.5;
+  border-left: 4px solid var(--acid);
+  padding-left: 24px;
+  margin: 35px 0 12px;
+}
+.coaches small {
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+.plans {
+  padding: 120px 4vw;
+}
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.plan-grid article {
+  border: 1px solid var(--line);
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  min-height: 430px;
+}
+.plan-grid article.featured {
+  border-color: var(--acid);
+  background: var(--panel);
+}
+.plan-grid article > p {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--acid);
+}
+.plan-grid strong {
+  font: 2.8rem "Archivo Black";
+  margin: 25px 0;
+}
+.plan-grid small {
+  font: 1rem "DM Sans";
+}
+.plan-grid ul {
+  list-style: none;
+  padding: 0;
+  color: var(--muted);
+  line-height: 2;
+}
+.plan-grid li:before {
+  content: "+";
+  color: var(--acid);
+  margin-right: 10px;
+}
+.plan-grid button {
+  margin-top: auto;
+  border: 1px solid var(--acid);
+  background: transparent;
+  color: var(--acid);
+  padding: 15px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.featured button {
+  background: var(--acid);
+  color: var(--black);
+}
+.final {
+  text-align: center;
+  padding: 120px 20px;
+  background: var(--acid);
+  color: var(--black);
+}
+.final > p {
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+}
+.final .button {
+  margin-top: 30px;
+  background: var(--black);
+  color: var(--acid);
+}
+footer {
+  padding: 35px 4vw;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: 0.6s ease;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (max-width: 760px) {
+  header {
+    height: 70px;
+    padding: 0 20px;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    padding: 25px;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+  }
+  nav.is-open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 70px 20px 0;
+  }
+  .hero-copy {
+    padding-bottom: 55px;
+  }
+  .hero-visual {
+    height: 420px;
+  }
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+  .metrics div:nth-child(2) {
+    border-right: 0;
+  }
+  .section-title {
+    display: block;
+  }
+  .training,
+  .plans {
+    padding: 85px 20px;
+  }
+  .training-grid,
+  .plan-grid,
+  .coaches {
+    grid-template-columns: 1fr;
+  }
+  .training-grid article {
+    min-height: 240px;
+  }
+  .training-grid h3 {
+    margin-top: 35px;
+  }
+  .coaches {
+    padding: 80px 20px;
+  }
+  .coach-art {
+    height: 390px;
+  }
+  footer {
+    padding: 30px 20px;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

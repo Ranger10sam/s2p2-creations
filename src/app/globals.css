@@ -28,6 +28,41 @@ body {
   overflow-x: hidden;
 }
 
+.contact-input {
+  width: 100%;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 0.5rem;
+  background: rgb(255 255 255 / 0.05);
+  padding: 0.875rem 1rem;
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.contact-input:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgb(124 58 237 / 0.25);
+}
+
+.contact-input::placeholder {
+  color: rgb(237 237 237 / 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

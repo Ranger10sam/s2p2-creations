@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import SidebarNav from "@/components/layout/SidebarNav";
-import TopLogoBar from "@/components/layout/TopLogoBar";
-import SmoothScroll from "@/components/layout/SmoothScroll";
+import ContactWidgetProvider from "@/components/contact/ContactWidgetProvider";
+import SiteChrome from "@/components/layout/SiteChrome";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "S2P2 Creations | Premium Digital Experiences",
-  description: "We build interactive digital products that convert. SaaS, Mobile Apps, Shopify, and High-Performance Web.",
+  title: "Ready-to-Customize Websites for Small Businesses | S2P2 Creations",
+  description: "Explore ready-to-customize websites for cafés, restaurants, bakeries, gyms, salons, photographers, interior designers, and growing local businesses. Choose a design and launch with S2P2 Creations.",
 };
 
 export default function RootLayout({
@@ -30,15 +29,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground`}
       >
-        <SmoothScroll>
-          <TopLogoBar />
-          <SidebarNav />
-          <div 
-            className="transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:pl-[var(--sidebar-width,240px)]"
-          >
-            {children}
-          </div>
-        </SmoothScroll>
+        <ContactWidgetProvider>
+          <SiteChrome>{children}</SiteChrome>
+        </ContactWidgetProvider>
       </body>
     </html>
   );

@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import Card from "@/components/ui/Card";
 import MagneticButton from "@/components/ui/MagneticButton";
 import CursorGlow from "@/components/ui/CursorGlow";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 export default function WorkPage() {
   return (

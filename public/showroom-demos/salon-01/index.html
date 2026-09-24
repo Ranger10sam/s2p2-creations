@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="Atelier salon concept website by S2P2 Creations."
+    />
+    <title>Atelier — Salon Concept</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-product="salon-01">
+    <header>
+      <a class="logo" href="#top">ATELIER</a
+      ><button
+        class="menu-toggle"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span></span><span></span>
+      </button>
+      <nav data-menu>
+        <a href="#services">Services</a><a href="#studio">Studio</a
+        ><a href="#artists">Artists</a
+        ><button data-customize>Book an appointment</button>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="portrait">
+          <img
+            src="hero.jpg"
+            width="1600"
+            height="1200"
+            alt="Bright, refined hair salon interior"
+            fetchpriority="high"
+          />
+          <span>01 / SIGNATURE</span>
+        </div>
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Hair · Beauty · Ritual</p>
+          <h1>Care, cut,<br /><em>considered.</em></h1>
+          <p>
+            A calm studio for thoughtful cuts, dimensional colour, and beauty
+            services designed around you.
+          </p>
+          <div class="hero-actions">
+            <button class="button dark" data-customize>Book your visit</button
+            ><a href="#services">Explore services ↓</a>
+          </div>
+        </div>
+      </section>
+      <section class="promise">
+        <p>Personal consultation included</p>
+        <p>Premium, conscious products</p>
+        <p>Quiet appointments available</p>
+      </section>
+      <section id="services" class="services">
+        <div class="title" data-reveal>
+          <p class="eyebrow">Our services</p>
+          <h2>Your routine,<br />refined.</h2>
+        </div>
+        <div class="service-list">
+          <article>
+            <div>
+              <span>01</span>
+              <h3>Cut &amp; Finish</h3>
+            </div>
+            <p>Consultation, wash, precision cut, and finish.</p>
+            <strong>from ₹900</strong>
+          </article>
+          <article>
+            <div>
+              <span>02</span>
+              <h3>Dimensional Colour</h3>
+            </div>
+            <p>Personalised tone and placement for natural depth.</p>
+            <strong>consultation</strong>
+          </article>
+          <article>
+            <div>
+              <span>03</span>
+              <h3>Care Rituals</h3>
+            </div>
+            <p>Scalp, repair, and hydration treatments.</p>
+            <strong>from ₹1,200</strong>
+          </article>
+        </div>
+      </section>
+      <section id="studio" class="studio">
+        <div data-reveal>
+          <p class="eyebrow">The studio</p>
+          <h2>Room to slow down.</h2>
+          <p>
+            Natural light, considered products, and appointments with enough
+            time to listen. Our studio is designed to feel personal, never
+            rushed.
+          </p>
+          <blockquote>
+            “Every detail feels calm, from the consultation to the final look.”
+          </blockquote>
+          <small>— RIYA, REGULAR CLIENT</small>
+        </div>
+        <div class="studio-art">
+          <img
+            src="detail.jpg"
+            width="1200"
+            height="1500"
+            alt="Stylist working with a client in a modern salon"
+            loading="lazy"
+          />
+        </div>
+      </section>
+      <section id="artists" class="artists">
+        <p class="eyebrow">Meet the team</p>
+        <div class="artist-grid">
+          <article>
+            <div class="avatar one"></div>
+            <h3>Maya</h3>
+            <p>Cutting · Texture</p>
+          </article>
+          <article>
+            <div class="avatar two"></div>
+            <h3>Anika</h3>
+            <p>Colour · Styling</p>
+          </article>
+          <article>
+            <div class="avatar three"></div>
+            <h3>Dev</h3>
+            <p>Care · Scalp health</p>
+          </article>
+        </div>
+      </section>
+      <section class="booking" data-reveal>
+        <p class="eyebrow">Your chair is ready</p>
+        <h2>Book a little time for yourself.</h2>
+        <button class="button light" data-customize>Find an appointment</button>
+      </section>
+    </main>
+    <footer>
+      <a class="logo" href="#top">ATELIER</a>
+      <p>Concept website by S2P2 Creations · <span data-year></span></p>
+    </footer>
+    <script src="../shared/demo.js"></script>
+  </body>
+</html>

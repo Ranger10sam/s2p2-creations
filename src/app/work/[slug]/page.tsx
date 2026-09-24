@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { projects } from "@/lib/projects";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
 import CursorGlow from "@/components/ui/CursorGlow";
 

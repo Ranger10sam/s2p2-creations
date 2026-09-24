@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta
+      name="description"
+      content="Butter and Bloom bakery concept website by S2P2 Creations."
+    />
+    <title>Butter &amp; Bloom — Bakery Concept</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-product="bakery-01">
+    <header>
+      <a class="logo" href="#top">Butter <i>&amp;</i> Bloom</a
+      ><button
+        class="menu-toggle"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span></span><span></span>
+      </button>
+      <nav data-menu>
+        <a href="#bakes">Our bakes</a><a href="#story">Our story</a
+        ><a href="#orders">Custom orders</a
+        ><button data-customize>Order something lovely</button>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy" data-reveal>
+          <p class="kicker">Baked fresh in your neighbourhood</p>
+          <h1>Small batches.<br /><em>Big feelings.</em></h1>
+          <p>
+            Celebration cakes and everyday treats, made with real butter and a
+            little patience.
+          </p>
+          <div>
+            <a class="pill coral" href="#bakes">See this week’s bakes</a
+            ><a class="plain" href="#orders">Plan a custom cake →</a>
+          </div>
+        </div>
+        <div class="cake-stage">
+          <img
+            src="hero.jpg"
+            width="1600"
+            height="1200"
+            alt="Fresh artisan bread and pastries from a neighbourhood bakery"
+            fetchpriority="high"
+          />
+          <span class="spark one">✦</span><span class="spark two">✦</span>
+          <p>Made by hand<br />every morning</p>
+        </div>
+      </section>
+      <section class="ticker" aria-label="Bakery highlights">
+        <span>SOURDOUGH</span><b>✦</b><span>CELEBRATION CAKES</span><b>✦</b
+        ><span>PASTRIES</span><b>✦</b><span>COFFEE</span>
+      </section>
+      <section id="bakes" class="bakes">
+        <div class="heading" data-reveal>
+          <p class="kicker">Fresh this week</p>
+          <h2>Pick your favourite.<br />Or take one of each.</h2>
+        </div>
+        <div class="product-grid">
+          <article data-reveal>
+            <div class="product-art loaf"><span></span></div>
+            <h3>Citrus loaf</h3>
+            <p>Lemon, olive oil, soft vanilla glaze.</p>
+            <strong>₹480</strong>
+          </article>
+          <article data-reveal>
+            <div class="product-art bun"><span></span></div>
+            <h3>Morning buns</h3>
+            <p>Brown sugar, cinnamon, orange zest.</p>
+            <strong>₹220</strong>
+          </article>
+          <article data-reveal>
+            <div class="product-art berry"><span></span></div>
+            <h3>Berry cloud</h3>
+            <p>Vanilla sponge, cream, market berries.</p>
+            <strong>₹1,250</strong>
+          </article>
+        </div>
+      </section>
+      <section id="story" class="story">
+        <div class="story-copy" data-reveal>
+          <p class="kicker">Our kitchen</p>
+          <h2>Good ingredients.<br />No shortcuts.</h2>
+          <p>
+            We bake in small batches throughout the day. That means flaky
+            layers, soft centres, and shelves that change with the season.
+          </p>
+          <ul>
+            <li>Local flour and dairy</li>
+            <li>Small-batch every day</li>
+            <li>Custom cakes with 48-hour notice</li>
+          </ul>
+        </div>
+        <div class="oven-art">
+          <img
+            src="detail.jpg"
+            width="1200"
+            height="1500"
+            alt="Baker preparing fresh pastries by hand"
+            loading="lazy"
+          />
+          <p>BAKED AT 6:42 AM</p>
+        </div>
+      </section>
+      <section id="orders" class="orders" data-reveal>
+        <p class="kicker">A cake for the occasion</p>
+        <h2>Tell us what you’re celebrating.</h2>
+        <p>
+          Share your date, serving size, and flavour ideas. We’ll reply with
+          options within one business day.
+        </p>
+        <button class="pill coral" data-customize>Start a custom order</button>
+      </section>
+    </main>
+    <footer>
+      <a class="logo" href="#top">Butter <i>&amp;</i> Bloom</a>
+      <p>Concept website by S2P2 Creations · <span data-year></span></p>
+    </footer>
+    <script src="../shared/demo.js"></script>
+  </body>
+</html>
